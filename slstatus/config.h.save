@@ -72,15 +72,13 @@ static const struct arg args[] = {
  	{ cpu_perc, "  %2s%% ", NULL },			// Uso del cpu
 	{ ram_perc, "|  %2s%% ", NULL },			// Uso de la ram
 /*	{ keyboard_indicators, "| NUM:%s ", "Y" },		// Indicador de teclado numérico ip */
-/*        { temp, "|  %s° ", "/sys/class/thermal/thermal_zone0/temp  " },	// Temperatura core1 */
-        { run_command, "|  %s°C ",     "sensors | awk '/""Package/ { print $4+0 }' " }, 
+        { temp, "|  %s° ", "/sys/devices/virtual/hwmon/hwmon3/temp8_input" },	// Temperatura core1
 	{ battery_state, "|  %s", "BAT0" },			// Estado de la batería
-	{ battery_perc, "%s%% ", "BAT0" },			// Porcentaje batería
+	{ battery_perc, "%s%% ", "BAT1" },			// Porcentaje batería
 	{ wifi_perc, "|  %s%% ", "wlan0" },		// Calidad conexión wifi    
       
       
 
 /*	{ num_files, "|  %s ", "/home/luis/.local/share/Trash/files/" },	// Papelera de reciclaje */
-	{ datetime, "%s ", "|  %I:%M %P |  %d/%m/%Y" },	// Fecha y hora
+	{ datetime, "%s ", "|  %I:%M %P  %d/%m/%Y" },	// Fecha y hora
 };
-
