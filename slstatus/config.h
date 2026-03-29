@@ -69,18 +69,19 @@ static const char estado[] = "a=$(amixer get Master | tail -n 1 | cut -d ' '\
                                
 static const struct arg args[] = {
 	/* function format          argument */
- 	{ cpu_perc, "  %2s%% ", NULL },			// Uso del cpu
-	{ ram_perc, "|  %2s%% ", NULL },			// Uso de la ram
+ 	{ cpu_perc, "| 💻 %2s%% ", NULL },			// Uso del cpu
+	{ ram_perc, "| 💾%2s%% ", NULL },			// Uso de la ram
 /*	{ keyboard_indicators, "| NUM:%s ", "Y" },		// Indicador de teclado numérico ip */
 /*        { temp, "|  %s° ", "/sys/class/thermal/thermal_zone0/temp  " },	// Temperatura core1 */
-        { run_command, "|  %s°C ",     "sensors | awk '/""Package/ { print $4+0 }' " }, 
-	{ battery_state, "|  %s", "BAT0" },			// Estado de la batería
+        { run_command, "| 🌡️ %s°C ",     "sensors | awk '/""Package/ { print $4+0 }' " }, 
+	{ battery_state, "| 🔋 %s", "BAT0" },			// Estado de la batería
 	{ battery_perc, "%s%% ", "BAT0" },			// Porcentaje batería
-	{ wifi_perc, "|  %s%% ", "wlan0" },		// Calidad conexión wifi    
+	{ wifi_perc, "| 📶 %s%% ", "wlan0" },		// Calidad conexión wifi    
+
       
       
 
 /*	{ num_files, "|  %s ", "/home/luis/.local/share/Trash/files/" },	// Papelera de reciclaje */
-	{ datetime, "%s ", "|  %I:%M %P |  %d/%m/%Y" },	// Fecha y hora
+	{ datetime, "%s ", "| ⏰%I:%M %P | 🗓️ %d/%m/%Y" },	// Fecha y hora
 };
 
